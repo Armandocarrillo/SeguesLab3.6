@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
+    @IBOutlet var forgotUserNameButton: UIButton!
+    @IBOutlet var ForgotPasswordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +20,28 @@ class ViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        segue.destination.navigationItem.title = userNameTextField.text
+      
+        guard let sender = sender as? UIButton else { return }
+        if sender == forgotUserNameButton{
+            segue.destination.navigationItem.title = "Forgot UserName"
+        } else if  sender == ForgotPasswordButton{
+            segue.destination.navigationItem.title = "Forgot Password"
+        } else {
+            segue.destination.navigationItem.title = userNameTextField.text
+        }
     }
-
+    
+    
+    @IBAction func ForgotUsernameTapped(_ sender: UIButton) {
+    performSegue(withIdentifier: "LogInSegue" , sender: forgotUserNameButton)
+        
+        
+            
+    }
+    
+    @IBAction func ForgotPasswordTapped(_ sender: UIButton) {
+        performSegue(withIdentifier: "LogInSegue", sender: ForgotPasswordButton)
+    }
+    
 }
 

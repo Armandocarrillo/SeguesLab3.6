@@ -35,15 +35,21 @@
                                     <segue destination="99d-OR-P98" kind="show" animates="NO" id="50K-RA-6v5"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tx3-ZO-Wd7">
-                                <rect key="frame" x="31" y="530" width="133" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Forgot User Name?"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDR-gy-QYc">
                                 <rect key="frame" x="271" y="530" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="ForgotPasswordTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9iy-of-Qts"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tx3-ZO-Wd7">
+                                <rect key="frame" x="39" y="530" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Forgot User Name?"/>
+                                <connections>
+                                    <action selector="ForgotUsernameTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OMJ-Hv-zkR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -53,8 +59,11 @@
                         <barButtonItem key="backBarButtonItem" title="Exit" id="Xcw-RE-DUC"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="ForgotPasswordButton" destination="TDR-gy-QYc" id="RUP-2T-mZh"/>
+                        <outlet property="forgotUserNameButton" destination="tx3-ZO-Wd7" id="QZH-eH-IP9"/>
                         <outlet property="passwordTextField" destination="Vom-Sj-89Z" id="K33-EF-duA"/>
                         <outlet property="userNameTextField" destination="5ez-mc-RlH" id="54r-3p-K63"/>
+                        <segue destination="99d-OR-P98" kind="show" identifier="LogInSegue" id="0Wi-Te-LmK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -96,4 +105,7 @@
             <point key="canvasLocation" x="1047.8260869565217" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="0Wi-Te-LmK"/>
+    </inferredMetricsTieBreakers>
 </document>
